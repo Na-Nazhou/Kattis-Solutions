@@ -1,0 +1,16 @@
+#include <iostream>
+
+int main() {
+    int n;
+    std::cin >> n;
+    while (n > 0) {
+        int r, e, c;
+        std::cin >> r >> e >> c;
+        int diff = r - (e - c);
+        std::cout << (diff > 0 ? "do not advertise"
+                : diff == 0 ? "does not matter"
+                : "advertise") << std::endl;
+        n--;
+    }
+    return 0;
+}
