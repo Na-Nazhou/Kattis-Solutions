@@ -12,15 +12,13 @@ int main() {
         std::getline(std::cin, command);
         std::stringstream ss(command);
         std::string word;
-        if (ss >> word && word == "simon" && ss >> word && word == "says") {
+        if (ss >> word && word == "Simon" && ss >> word && word == "says") {
             std::string first;
             std::string rest;
             ss >> first;
             std::getline(ss, rest);
             std::cout << first + rest << std::endl;
-        } else {
-            std::cout << std::endl;
-        }
+        } 
     }
     return 0;
 }
