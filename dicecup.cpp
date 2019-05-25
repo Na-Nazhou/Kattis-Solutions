@@ -1,7 +1,8 @@
 #include <iostream>
 #include <unordered_map>
+#include <vector>
+#include <algorithm>
 
-// TODO
 int main() {
     int a, b;
     std::cin >> a >> b;
@@ -19,11 +20,17 @@ int main() {
             max = n.second;
         }
     }
-
+    
+    std::vector<int> vec;
     for (auto &n : map) {
         if (n.second == max) {
-            std::cout << n.first << std::endl;
+            vec.push_back(n.first);
         }
+    }
+
+    std::sort(vec.begin(), vec.end());
+    for (auto &n : vec) {
+        std::cout << n << std::endl;
     }
     return 0;
 }

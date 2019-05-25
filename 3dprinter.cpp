@@ -1,18 +1,11 @@
 #include <iostream>
-#include <algorithm> 
-
-//TODO
-int find(int n, int x) {
-    if (n <= x) {
-        return 1;
-    } else {
-        return 1 + std::min(find(n - x, x), find(n, 2 * x));
-    }
-}
+#include <cmath>
 
 int main() {
     int n; 
     std::cin >> n; 
-    std::cout << find(n, 1) << std::endl;
+    n = std::ceil(std::log2(n));
+    n++;
+    std::cout << n << std::endl;
     return 0;
 }
