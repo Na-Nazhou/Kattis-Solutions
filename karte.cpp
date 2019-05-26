@@ -2,18 +2,22 @@
 #include <sstream>
 #include <string>
 
-//TODO
 int main() {
     int p = 13, k = 13, h = 13, t = 13;
     bool arr[4][14];
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 14; j++) {
+            arr[i][j] = false;
+        }
+    }
     bool dup = false;
     std::string str;
     std::getline(std::cin, str);
-    for (int i = 0; i < str.length(); i = i + 3) {
+    for (int i = 0; i < str.size(); i = i + 3) {
         char suit = str[i];
         int n;
         std::stringstream ss;
-        ss << str.substr(i + 1, 2);
+        ss << str.substr(i + 1, i + 2);
         ss >> n;
         if (suit == 'P') {
             if (arr[0][n]) {
