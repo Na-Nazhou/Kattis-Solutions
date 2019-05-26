@@ -1,5 +1,6 @@
 import java.util.*;
 
+//TODO
 class AdministrativeProblems {
     public static void main(String[] args) {
         Scanner sc = new Scammer(System.in);
