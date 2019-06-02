@@ -2,3 +2,4 @@
 
 ## Todo
 - administrative problems
+- dicegame
