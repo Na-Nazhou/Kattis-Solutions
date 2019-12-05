@@ -1,3 +1,4 @@
+*.in
 *.out
-temp.cpp
 *.class
+temp.cpp
