@@ -3,13 +3,8 @@
 
 int main() {
     int counter = 1;
-    while (true) {
-        int n;
-        std::cin >> n;
-        if (n == 0) {
-            break;
-        } 
-
+    int n;
+    while (std::cin >> n, n != 0) {
         std::cout << "SET " << counter << std::endl;
         std::vector<std::string> arr;
         for (int i = 0; i < n; i++) {
@@ -21,8 +16,8 @@ int main() {
                 arr.push_back(str);
             }
         }
-        for (int i = arr.size() -1; i >= 0; i--) {
-            std::cout << arr[i] << std::endl;
+        for (std::string str : arr) {
+            std::cout << str << std::endl;
         }
         counter++;
     }

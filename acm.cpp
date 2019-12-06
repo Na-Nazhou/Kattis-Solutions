@@ -1,3 +1,5 @@
+// Data strucutres: unordered_set
+
 #include <iostream>
 #include <unordered_set>
 #include <string>
@@ -7,12 +9,8 @@ int main() {
     std::unordered_map<std::string, int> map;
     std::unordered_set<std::string> set;
     int time = 0;
-    while (true) {
-        int m; 
-            std::cin >> m;
-        if (m == -1) {
-            break;
-        }
+    int m; 
+    while (std::cin >> m, m != -1) {
         std::string qn, result;
         std::cin >> qn >> result;
         if (result == "right") {

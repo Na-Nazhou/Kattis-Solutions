@@ -16,7 +16,7 @@ int pad(std::string &s) {
 int main() {
     int n;
     std::cin >> n;
-    while (n > 0) {
+    while (n--) {
         std::string s;
         std::cin >> s; 
         std::string &str = s;
@@ -39,7 +39,6 @@ int main() {
             }
         }
         std::cout << std::endl;
-        n--;
     }
     return 0;
 }

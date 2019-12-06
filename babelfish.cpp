@@ -1,3 +1,5 @@
+// Notes: sstream
+
 #include <iostream>
 #include <unordered_map>
 #include <string>
@@ -5,14 +7,13 @@
 
 int main() {
     std::string line;
-    std::getline(std::cin, line);
     std::unordered_map<std::string, std::string> map;
-    while (line != "") {
+    
+    while (std::getline(std::cin, line), line != "") {
         std::stringstream ss(line);
         std::string key, value;
         ss >> value >> key;
         map[key] = value;
-        std::getline(std::cin, line);
     }
 
     while (std::getline(std::cin, line)) {

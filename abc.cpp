@@ -1,43 +1,35 @@
+// The first line contains the three positive integers 𝐴, 𝐵 and 𝐶, not necessarily in that order. 
+// The three numbers will be less than or equal to 100.
+// The second line contains three uppercase letters ’A’, ’B’ and ’C’ (with no spaces between them) representing the desired order.
+
+// Data strucutres: array, unordered_map
+// Algorithms: sort
+
 #include <iostream>
 #include <algorithm>
+#include <array>
+#include <unordered_map>
 
 int main() {
     int a, b, c;
-    int mid;
     std::cin >> a >> b >> c;
-    const int &min = std::min({a, b, c});
-    const int &max = std::max({a, b, c});
-    if (min == a) {
-        max == b ? mid = c : mid = b;
-    } else if (min == b) {
-        max == a ? mid = c : mid = a;
-    } else {
-        max == a ? mid = b : mid = a;
-    }
     
-    char order;
+    std::array<int, 3> arr = { a, b, c };
+    std::sort(arr.begin(), arr.end());
+    std::unordered_map<char, int> map;
+    map['A'] = arr[0];
+    map['B'] = arr[1];
+    map['C'] = arr[2];
+    
     for (int i = 0; i < 3; i++) { 
+        char order;
         std::cin >> order;
-        switch (order) {
-            case 'A':
-                std::cout << min;
-                if (i != 2) {
-                    std::cout << " ";
-                }
-                break;
-            case 'B':
-                std::cout << mid;
-                if (i != 2) {
-                    std::cout << " ";
-                }
-                break;
-            case 'C':
-                std::cout << max;
-                if (i != 2) {
-                    std::cout << " ";
-                }
-                break;
+        if (i != 0) {
+            std::cout << " ";
         }
+        std::cout << map[order];
     }
+    std::cout << std::endl;
+
     return 0;
 }

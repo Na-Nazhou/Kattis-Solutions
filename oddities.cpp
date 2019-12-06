@@ -4,8 +4,7 @@
 int main() {
     int n;
     std::cin >> n;
-    while (n > 0) {
-        n--;
+    while (n--) {
         int x;
         std::cin >> x;
         std::string result = x % 2 == 0 ? "even" : "odd"; 

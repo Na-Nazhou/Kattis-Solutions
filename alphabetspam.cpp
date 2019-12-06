@@ -1,3 +1,5 @@
+// Notes: cctype (islower, isupper)
+
 #include <iostream>
 #include <string>
 #include <iomanip>
@@ -6,23 +8,26 @@
 int main() {
     std::string str; 
     std::cin >> str;
-    double n = str.length();
-    double whitespace = 0, lower = 0, upper = 0, symbol = 0;
-    for (int i = 0; i < n; i++) {
-        char ch = str[i];
+    
+    int n = str.length();
+    int whitespace = 0, lower = 0, upper = 0, symbol = 0;
+    for (char ch : str) {
         if (ch == '_') {
-            whitespace = whitespace + 1;
+            whitespace++;
         } else if (std::islower(ch)) {
-            lower = lower + 1;
+            lower++;
         } else if (std::isupper(ch)) {
-            upper = upper + 1;
+            upper++;
         } else {
-            symbol = symbol + 1;
+            symbol++;
         }
     }
-    std::cout << std::setiosflags(std::ios::fixed) <<
-        std::setprecision(10) << whitespace / n << "\n"
-        << lower / n << "\n" << upper / n << "\n" 
-        << symbol / n << std::endl;
+    std::cout << std::setiosflags(std::ios::fixed) << std::setprecision(10) 
+        << (double)whitespace / n << "\n"
+        << (double)lower / n << "\n" 
+        << (double)upper / n << "\n" 
+        << (double)symbol / n 
+        << std::endl;
+    
     return 0;
 }

@@ -1,12 +1,8 @@
 #include <iostream>
 
 int main() {
-    while (true) {
-        int a, b;
-        std::cin >> a >> b;
-        if (a == 0 && b == 0) {
-            break;
-        } 
+    int a, b;
+    while (std::cin >> a >> b, (a || b)) {
         std::cout << a / b << " " << a % b << " / " << b  << std::endl;
     }
     return 0;

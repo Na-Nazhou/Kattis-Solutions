@@ -1,20 +1,16 @@
 #include <iostream>
 
 int main() {
-    int n;
-    int count = 0;
-    double sum = 0;
+    int n, count = 0, sum = 0;
     std::cin >> n;
-    for (int i = 0; i < n; i++) {
+    while (n--) {
         int val;
         std::cin >> val;
-        if (val == -1) {
-            continue;
-        } else {
+        if (val != -1) {
             sum += val;
             count++;
         }
     }
-    std::cout << sum / count  << std::endl;
+    std::cout << (double)sum / count  << std::endl;
     return 0;
 }

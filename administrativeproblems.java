@@ -3,7 +3,7 @@ import java.util.*;
 //TODO
 class AdministrativeProblems {
     public static void main(String[] args) {
-        Scanner sc = new Scammer(System.in);
+        Scanner sc = new Scanner(System.in);
         int numOfTestCases = sc.nextInt();
         TreeMap<String, Spy> spies = new TreeMap<>();
         HashMap<String, Integer> catalog_price = new HashMap<>();
@@ -29,30 +29,25 @@ class AdministrativeProblems {
                 String S = sc.next();
                 char e = sc.next().charAt(0);
                 switch (e) {
-                    case 'p':
-                        String C = sc.next();
-                        Spy spy = new Spy(S, C);
-                        spy.cost += pick_up.get(C);
-                        spies.add(spy);
-                        break;
-                    case 'r':
-                        int d = sc.nextInt();
-                        Spy spy = spies.get(S);
-                        spy.cost += d * cost_perkm.get(spy.car); 
-                        break;
-                    case 'a':
-                        int s = sc.nextInt();
-                        Spy spy = spies.get(S);
-                        spy.cost += (ints * catalog_price.get(spy.car) / 100);
-                        break;
-                    default:
+                case 'p':
+                    String C = sc.next();
+                    Spy spy1 = new Spy(S, C);
+                    spy1.cost += pick_up.get(C);
+                    spies.put(S, spy1);
+                    break;
+                case 'r':
+                    int d = sc.nextInt();
+                    Spy spy2 = spies.get(S);
+                    spy2.cost += d * cost_perkm.get(spy2.car);
+                    break;
+                case 'a':
+                    int s = sc.nextInt();
+                    Spy spy3 = spies.get(S);
+                    spy3.cost += (s * catalog_price.get(spy3.car) / 100);
+                    break;
+                default:
                 }
             }
-
-            for (
-
-            
-
         }
     }
 }
@@ -72,8 +67,7 @@ class Spy {
         if (cost < 0) {
             return name + " INCONSISTENT";
         } else {
-            return name + " " cost;
+            return name + " " + cost;
         }
     }
 }
-

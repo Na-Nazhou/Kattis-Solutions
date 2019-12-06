@@ -7,7 +7,7 @@ int main() {
     std::cin >> T;
     std::string str;
     std::getline(std::cin, str);
-    for (int i = 0; i < T; i++) {
+    while (T--) {
         std::string command;
         std::getline(std::cin, command);
         std::stringstream ss(command);

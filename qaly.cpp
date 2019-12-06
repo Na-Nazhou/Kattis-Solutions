@@ -5,8 +5,7 @@ int main() {
     int n;
     std::cin >> n;
     double qaly = 0;
-    while (n > 0) {
-        n--;
+    while (n--) {
         double q;
         double y;
         std::cin >> q >> y;

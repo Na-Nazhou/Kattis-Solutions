@@ -4,7 +4,7 @@
 int main() {
     int n; 
     std::cin >> n;
-    for (int i = 0; i < n; i++) {
+    while (n--) {
         std::string str;
         std::cin >> str;
         std::cout << str.size() << std::endl;

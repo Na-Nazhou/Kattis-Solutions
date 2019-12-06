@@ -3,7 +3,7 @@
 int main() {
     int n; 
     std::cin >> n;
-    while (n > 0) {
+    while (n--) {
         bool possible = false;
         int op1, op2, result;
         std::cin >> op1 >> op2 >> result;
@@ -18,7 +18,6 @@ int main() {
             possible = true;
         }
         std::cout << (possible ? "Possible" : "Impossible")  << std::endl;
-        n--;
     }
     return 0;
 }

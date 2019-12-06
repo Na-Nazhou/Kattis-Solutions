@@ -1,8 +1,9 @@
+// Notes: cctype (isalpha, tolower)
+
 #include <iostream>
 #include <unordered_map>
 #include <string>
 #include <cctype>
-#include <sstream>
 
 int main() {
     std::unordered_map<char, std::string> map;
@@ -34,12 +35,15 @@ int main() {
     map['z'] = "2";
     std::string str;
     std::getline(std::cin, str);
-    for (auto &ch : str) {
+    
+    for (char ch : str) {
         if (std::isalpha(ch)) {
             std::cout << map[std::tolower(ch)];
         } else {
             std::cout << ch;
         }
     }
+    std::cout << std::endl;
+    
     return 0;
 }

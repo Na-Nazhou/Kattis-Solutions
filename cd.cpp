@@ -2,31 +2,23 @@
 #include <unordered_set>
 
 int main() {
-    while (true) {
-        int N, M;
-        std::cin >> N >> M;
-
-        if (N == 0 && M == 0) {
-            break;
-        }
-
+    int N, M;
+    while (std::cin >> N >> M, (N || M)) {
         std::unordered_set<int> set;
         int count = 0;
 
-        while (N > 0) {
+        while (N--) {
             int n;
             std::cin >> n;
             set.insert(n);
-            N--;
         }
 
-        while (M > 0) {
+        while (M--) {
             int m; 
             std::cin >> m;
             if (set.find(m) != set.end()) {
                 count++;
             }
-            M--;
         }
         std::cout << count << std::endl;
     }

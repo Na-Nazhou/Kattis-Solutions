@@ -6,7 +6,7 @@ int main() {
     while (std::cin >> n) {
         int max = -1000000;
         int min = -max;
-        for (int i = 0; i < n; i++) {
+        while (n--) {
             int x;
             std::cin >> x;
             if (x > max) {
@@ -17,8 +17,11 @@ int main() {
             }
         }
         int range = max - min;
-        std::cout << "Case " << caseNo << ": " <<
-            min << " " << max << " " << range << std::endl;
+        std::cout << "Case " << caseNo << ": " 
+            << min << " " 
+            << max << " " 
+            << range 
+            << std::endl;
         caseNo++;
     }
     return 0;

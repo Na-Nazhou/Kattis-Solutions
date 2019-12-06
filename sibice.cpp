@@ -1,15 +1,14 @@
 #include <iostream>
-#include <math.h>
+#include <cmath>
 
 int main() {
     int n, w, h;
     std::cin >> n >> w >> h;
-    int max = sqrt(w * w + h * h); 
-    while (n > 0) {
+    int max = std::sqrt(w * w + h * h); 
+    while (n--) {
         int x;
         std::cin >> x;
         std::cout << (x <= max ? "DA" : "NE") << std::endl;
-        n--;
     }
     return 0;
 }

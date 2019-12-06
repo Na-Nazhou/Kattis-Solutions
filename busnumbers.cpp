@@ -17,8 +17,8 @@ int main() {
     map[vec[0]] = 0;
     for (int i = 1; i < n; i++) {
         auto it = --map.end();
-        int first = (*it).first;
-        int second = (*it).second;
+        int first = it->first;
+        int second = it->second;
         if (first + second + 1 == vec[i]) {
             map[first]++;
         } else {

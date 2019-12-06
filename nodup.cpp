@@ -7,8 +7,7 @@ int main() {
     std::string str;
     bool nodup = true;
     while (std::cin >> str) {
-        auto search = set.find(str);
-    if (search == set.end()) {
+        if (set.find(str) == set.end()) {
             set.insert(str);
         } else {
             nodup = false;

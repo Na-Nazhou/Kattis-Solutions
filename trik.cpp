@@ -4,10 +4,9 @@
 int main() {
     std::string s;
     std::cin >> s;
-    const char *arr = s.c_str();
     int curr = 1;
-    for (int i = 0; i < s.length(); i++) {
-        switch(arr[i]) {
+    for (char ch : s) {
+        switch(ch) {
             case 'A':
                 if (curr == 1) {
                     curr = 2;

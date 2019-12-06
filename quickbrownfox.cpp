@@ -11,7 +11,7 @@ int main() {
     std::vector<char> vec = {'a', 'b', 'c', 'd', 'e',
             'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o',
             'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
-    while (n > 0) {
+    while (n--) {
         std::unordered_set<char> set;
         std::getline(std::cin, line);
         for (auto ch : line) {
@@ -31,7 +31,6 @@ int main() {
             }
             std::cout << std::endl;
         }
-        n--;
     }
     return 0;
 }

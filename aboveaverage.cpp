@@ -1,3 +1,7 @@
+// Output the percentage of grades above the average grade 
+
+// Notes: specify precision (std::setiosflags(std::ios::fixed), std::setprecision(3))
+
 #include <iostream>
 #include <vector>
 #include <iomanip>
@@ -5,7 +9,7 @@
 int main() {
     int N; 
     std::cin >> N;
-    while (N > 0) {
+    while (N--) {
         int n;
         std::cin >> n;
         std::vector<int> grades;
@@ -16,17 +20,15 @@ int main() {
             grades.push_back(grade);
             sum += grade;
         }
-        double average = (double)sum / (double)n;
+        double average = (double)sum / n;
         int count = 0;
-        for (auto i : grades) {
-            if (i - average > 10E-6) {
+        for (int grade : grades) {
+            if (grade - average > 10E-6) {
                 count++;
             }
         }
-
-        double percentage = (double)count / (double)n * 100;
+        double percentage = (double)count / n * 100;
         std::cout << std::setiosflags(std::ios::fixed) << std::setprecision(3) << percentage << "%" << std::endl;
-        N--;
     }
     return 0;
 }

@@ -3,6 +3,8 @@
 int main() {
     int n;
     std::cin >> n;
+    
     std::cout << (n % 2 == 0 ? "Bob" : "Alice") << std::endl;
+    
     return 0;
 }

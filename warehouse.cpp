@@ -8,7 +8,7 @@
 int main() {
     int T; 
     std::cin >> T;
-    while (T > 0) {
+    while (T--) {
         int N;
         std::cin >> N;
         std::map<std::string, int> map;
@@ -29,7 +29,6 @@ int main() {
         for (auto p : vec) {
             std::cout << p.second << " " << -p.first << std::endl;
         }
-        T--;
     }
     return 0;
 }

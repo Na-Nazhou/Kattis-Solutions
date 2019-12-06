@@ -4,7 +4,7 @@
 int main() {
     int n; 
     std::cin >> n;
-    for (int i = 0; i < n; i++) {
+    while (n--) {
         double min;
         std::cin >> min;
         std::cout << std::ceil(min / 400) << std::endl;
